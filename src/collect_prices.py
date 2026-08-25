@@ -151,6 +151,32 @@ def fetch_yahoo_chart(symbol: str, start: str, end: str, label_as: Optional[str]
         return None, type(exc).__name__
 
 
+def collect_sp500_index(
+    start: str = START_DATE,
+    end: str = END_DATE,
+) -> pd.DataFrame:
+    """Collect the S&P 500 index separately for beta calculation.
+
+    The returned frame contains only ``Date`` and adjusted ``Close`` and is
+    never mixed into the constituent OHLCV panel.
+    """
+    frame, yahoo_error = fetch_yahoo("^GSPC", start, end, label_as="^GSPC")
+    if frame is None or len(frame) < MIN_ROWS_KEEP:
+        frame, chart_error = fetch_yahoo_chart("^GSPC", start, end, label_as="^GSPC")
+        if frame is None or len(frame) < MIN_ROWS_KEEP:
+            raise RuntimeError(
+                "S&P 500 지수(^GSPC) 수집 실패: "
+                f"yfinance={yahoo_error}, yahoo_chart={chart_error}"
+            )
+    return (
+        frame[["Date", "Close"]]
+        .dropna()
+        .drop_duplicates("Date", keep="last")
+        .sort_values("Date")
+        .reset_index(drop=True)
+    )
+
+
 class TiingoFallback:
     """Rate-limited third source with positive and negative caches."""
 
