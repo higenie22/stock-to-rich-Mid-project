@@ -6,8 +6,12 @@ venv/
 .env
 tmp/
 
-data/raw/*.parquet
-data/processed/*.parquet
-data/raw/cache/
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
 outputs/*
 !outputs/.gitkeep
+
+# Local reference repository used during development
+.reference_previous_oaa/
