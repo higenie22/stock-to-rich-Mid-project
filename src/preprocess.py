@@ -144,6 +144,9 @@ def build_ml_dataset(
         | (frame["Close"] > frame["High"]) | (frame["Close"] < frame["Low"])
         | (frame["Open"] > frame["High"]) | (frame["Open"] < frame["Low"])
     )
+    ohlc = frame[["Open", "High", "Low", "Close"]]
+    frame["High"] = ohlc.max(axis=1)
+    frame["Low"] = ohlc.min(axis=1)
 
     expected_rows = max(1, int(np.busday_count(pd.Timestamp(start).date(), pd.Timestamp(end).date())))
     coverage = (
