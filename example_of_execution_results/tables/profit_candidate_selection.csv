@@ -1,0 +1,2 @@
+﻿selected_strategy,expected_periods,rule,status,evaluation_role,independent_holdout,sample,costs,latest_signal
+cv_locked_relu_4model,4,Fixed four-model ReLU weights from 2020-2022 purged CV IC only; no OOS performance selection; unresolved holding -50% at exit,cv_weights_locked,cv_only_weight_selection_reused_oos_evaluation,False,common macro/base features and 20-session sequence; no future-label filtering of candidates,before_costs,2026-06-30

@@ -1,0 +1,4 @@
+﻿cv_year,fold_start,max_train_label_end,max_label_available,selected_epochs,inner_train_rows,inner_validation_rows,inner_validation_start,inner_max_label_end
+2020,2020-01-02,2019-12-24,2019-12-24,4,16439,7536,2018-07-03,2018-06-28
+2021,2021-01-04,2020-12-29,2020-12-29,1,24271,9272,2019-07-08,2019-07-05
+2022,2022-01-03,2021-12-27,2021-12-27,4,31779,10736,2020-07-06,2020-07-01
