@@ -1,0 +1,25 @@
+# Verified with the project's `colab` Conda environment on 2026-09-14.
+# Install from the project root with: python -m pip install -r requirements.txt
+
+# Core numerical and tabular analysis
+numpy==2.1.3
+pandas==2.2.3
+scipy==1.16.3
+scikit-learn==1.6.1
+pyarrow==25.0.1
+threadpoolctl==3.6.0
+
+# Models and figures
+lightgbm==4.6.0
+torch==2.13.0
+matplotlib==3.10.0
+
+# Data collection and progress reporting
+requests==2.34.2
+yfinance==0.2.66
+tqdm==4.67.3
+curl-cffi==0.16.1
+
+# Original notebook inspection and execution
+ipython==9.16.1
+jupyterlab==4.6.3

@@ -1,0 +1,50 @@
+{
+  "project_root": "C:\\workspaces\\middle\\final",
+  "input_sha256": {
+    "data\\processed\\final_df.parquet": "c99c56acf66319c89724c56b2c8658d9d70cde6940d46510f03d46ed2fe57bab",
+    "data\\raw\\sp500_beta_df.parquet": "f987d3de9e84ff0ec4c31651871069db90e7c3907fe9c2750326b1a71ca4f6c2",
+    "data\\raw\\cache\\sp500_membership_history.csv": "39c488ebd6ce6838599e54751adbe8c8e4b68d5801dd77d29b6d137dd77388ac",
+    "data\\raw\\sp500_universe.csv": "b8c4948c278c4c7ed9dd04a944e83ae8e2db2adb8be7ddfb23477de5a493d503",
+    "data\\raw\\validation_macro_market_raw.csv": "33ceb3d87f9211c6bdeef0b7f4d4625f9a53af674279cb423860960ee46f7031"
+  },
+  "python": "3.12.13 | packaged by Anaconda, Inc. | (main, Jul  9 2026, 14:26:47) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "scipy": "1.16.3",
+    "lightgbm": "4.6.0",
+    "torch": "2.13.0",
+    "pyarrow": "25.0.1"
+  },
+  "source_notebooks": [
+    "sp500_stability_v14.ipynb",
+    "test_validation_report.ipynb"
+  ],
+  "limitations": [
+    "reused evaluation period",
+    "static sector mapping",
+    "unresolved settlements remain missing",
+    "market price index is not asserted to be a total-return benchmark"
+  ],
+  "figure_files": [
+    "figures/figure_1_horizon_comparison.png",
+    "figures/figure_2_feature_ic.png",
+    "figures/figure_3_macro_ic.png",
+    "figures/figure_4_lstm_diagnostics.png",
+    "figures/figure_5_portfolio_periods.png",
+    "figures/figure_6_factor_ic.png",
+    "figures/figure_7_final_ensemble.png",
+    "figures/figure_8_candidate_comparison.png"
+  ],
+  "stable_policy": {
+    "lookback": 120,
+    "k": 3,
+    "features": [
+      "vol_ann_120d",
+      "abs(beta_120d)"
+    ],
+    "fit_scope": "date-wise cross-section"
+  }
+}
