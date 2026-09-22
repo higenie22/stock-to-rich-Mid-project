@@ -1,0 +1,5 @@
+﻿Date,raw_ic,incremental_ic,momentum_ic,n_candidates,n_evaluated,controls,sector_mode,status
+2024-07-01,-0.02986263344093067,-0.07488897262095404,0.07137002204033663,349,347,"momentum_120d,momentum_252d,beta_120d",not_controlled_no_PIT,diagnostic_only
+2024-12-19,0.01179582374896359,-0.016461395026097402,0.014504832184390195,363,363,"momentum_120d,momentum_252d,beta_120d",not_controlled_no_PIT,diagnostic_only
+2025-06-16,0.025120934341412413,-0.08250756805478943,0.09657126702413077,236,233,"momentum_120d,momentum_252d,beta_120d",not_controlled_no_PIT,diagnostic_only
+2025-12-05,0.047465811273586685,0.02053824168744737,0.04498577120091065,254,251,"momentum_120d,momentum_252d,beta_120d",not_controlled_no_PIT,diagnostic_only

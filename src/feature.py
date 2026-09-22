@@ -130,15 +130,7 @@ def add_features(
         relative_strength = avg_gain / avg_loss
         rsi = 100.0 - 100.0 / (1.0 + relative_strength)
         rsi = rsi.where(avg_loss > 0, 100.0).where(avg_gain > 0, 0.0)
-        # frame[f"rsi_{window}d"] = rsi.mask((avg_gain == 0) & (avg_loss == 0), 50.0)
-        
-        # 상승·하락이 모두 0이면 RSI는 50
-        rsi = rsi.mask((avg_gain == 0) & (avg_loss == 0), 50.0)
-
-        # 룩백 데이터가 부족하면 RSI도 결측값 유지
-        frame[f"rsi_{window}d"] = rsi.where(
-        avg_gain.notna() & avg_loss.notna()
-        )
+        frame[f"rsi_{window}d"] = rsi.mask((avg_gain == 0) & (avg_loss == 0), 50.0)
 
         # 기간 수익률, 현재 가격과 정확히 N거래일 전 가격을 비교
         period_return = ticker_group["Close"].transform(

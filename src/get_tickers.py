@@ -194,7 +194,7 @@ def get_historical_sp500_universe(
     # 편입일이 분석기간 끝보다 이전이고, 편출일이 없거나(현재도 편입 상태) 편출일이
     # 분석기간 시작 이후면, 그 구간 동안 최소 하루는 실제로 구성종목이었다는 뜻이다.
     overlaps = (membership["start_date"] < end_ts) & (
-        membership["end_date"].isna() | (membership["end_date"] >= start_ts)
+        membership["end_date"].isna() | (membership["end_date"] > start_ts)
     )
     tickers = sorted(membership.loc[overlaps, "ticker"].dropna().unique())
     frame = pd.DataFrame({"ticker_original": tickers})
@@ -223,7 +223,8 @@ def filter_by_membership(
     membership = _load_membership_history(force_refresh)[["ticker", "start_date", "end_date"]]
     merged = df.merge(membership, left_on=ticker_col, right_on="ticker", how="left")
     is_member = (merged[date_col] >= merged["start_date"]) & (
-        merged["end_date"].isna() | (merged[date_col] <= merged["end_date"])
+        # 원본 변환기는 처음 목록에서 사라진 날을 end_date로 기록: [start, end).
+        merged["end_date"].isna() | (merged[date_col] < merged["end_date"])
     )
     merged["_is_member"] = is_member.fillna(False)
     # 같은 (종목, 날짜)가 여러 편입 구간과 매칭될 수 있으므로, 그중 하나라도

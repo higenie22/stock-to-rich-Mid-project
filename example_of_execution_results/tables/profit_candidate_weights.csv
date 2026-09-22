@@ -1,0 +1,6 @@
+﻿model,elasticnet,base_lgbm,elasticnet_lgbm_equal,elasticnet_lgbm_lstm_equal,original_40_40_20,cv_locked_relu_4model
+elasticnet,1.0,0.0,0.5,0.3333333333333333,0.0,0.3334518160964445
+base_lgbm,0.0,1.0,0.5,0.3333333333333333,0.0,0.0
+lstm,0.0,0.0,0.0,0.3333333333333333,0.2,0.023524628626919678
+mlp,0.0,0.0,0.0,0.0,0.4,0.6430235552766359
+macro,0.0,0.0,0.0,0.0,0.4,0.0

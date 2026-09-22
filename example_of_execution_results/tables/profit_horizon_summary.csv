@@ -1,0 +1,13 @@
+﻿strategy,top_n,n_periods,settled_periods,path_periods,mean_period_return_available,cumulative_return,mdd,annualized_volatility,mdd_15_preference,status,horizon
+all_train,10,24,23,23,0.003934501174724049,,,,unresolved,incomplete,20
+lowvol,10,24,20,20,0.012945042289819709,,,,unresolved,incomplete,20
+stable_lowvol,10,24,20,20,0.012945042289819709,,,,unresolved,incomplete,20
+stable_train,10,24,24,24,0.006673533820474686,0.1550822666912428,-0.13620888750064408,0.1497789412071519,met_observed_path,complete_path,20
+all_train,10,8,8,8,0.0007141904809200399,-0.03116871096506968,-0.20012958129591696,0.20465474312024493,not_met,complete_path,60
+lowvol,10,8,5,5,0.025652801552888592,,,,unresolved,incomplete,60
+stable_lowvol,10,8,5,5,0.025652801552888592,,,,unresolved,incomplete,60
+stable_train,10,8,8,8,0.013942385664386377,0.10154395015109707,-0.14328982878469998,0.17276764392197994,met_observed_path,complete_path,60
+all_train,10,4,4,4,0.05605600540030807,0.2393009826348338,-0.10837715204309994,0.1525983131503221,met_observed_path,complete_path,120
+lowvol,10,4,2,2,0.0822782293652029,,,,unresolved,incomplete,120
+stable_lowvol,10,4,2,2,0.0822782293652029,,,,unresolved,incomplete,120
+stable_train,10,4,3,3,0.029614187078494298,,,,unresolved,incomplete,120
